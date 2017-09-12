@@ -10,24 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 3) do
 
+  create_table "business_days", force: :cascade do |t|
+    t.string "date"
+  end
 
-CREATE TABLE transactions (
-  id INTEGER PRIMARY KEY,
-  date INTEGER,
-  client TEXT
-);
-CREATE TABLE business_day (
-  id INTEGER PRIMARY KEY,
-  date STRING
-);
-CREATE TABLE product (
-  id INTEGER PRIMARY KEY,
-  name TEXT,
-  department TEXT,
-  trans_id INTEGER,
-  cost INTEGER
-);
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.string "department"
+    t.integer "cost"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.integer "date"
+    t.string "client"
+    t.integer "product_id"
+    t.integer "product_id_2"
+    t.integer "product_id_3"
+  end
 
 end
