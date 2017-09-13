@@ -23,11 +23,9 @@ ActiveRecord::Schema.define(version: 3) do
   end
 
   create_table "transactions", force: :cascade do |t|
-    t.integer "date"
+    t.integer "business_day_id"
     t.string "client"
     t.integer "product_id"
-    t.integer "product_id_2"
-    t.integer "product_id_3"
   end
 
 end
