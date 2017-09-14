@@ -42,14 +42,14 @@ date = 1
   end
 
   def dept_performance(dept)
-    day_total/dept_total(dept) * 10
+    ((day_total).to_f)/(dept_total(dept).to_f)
   end
 
   def greet
     puts "Welcome to Retail Web, your place for store-line reporting. Would you like to view today's team performance? (Y/N)"
     answer = gets.chomp
     if answer == "Y"
-      puts "Your congratulations! Your team sold $#{day_total}, with a #{average_dollar_trans}."
+      puts "Your congratulations! Your team sold $#{day_total}, with an average dollar transaction of $#{average_dollar_trans}."
     else
       puts "Okay."
     end
@@ -59,7 +59,7 @@ date = 1
     puts "What department's performance would you like to view? (Accessories, Clothing, or Jewelry)"
     dept = gets.chomp
 
-    puts "Wonderful. Your #{dept} sold $#{dept_total(dept)}, %#{dept_performance(dept)} of your business with #{dept_count(dept)} units."
+    puts "Wonderful. Your #{dept} sold $#{dept_total(dept)}, %#{dept_performance(dept)} of your business with #{dept_count(dept)} unit(s)."
   end
 
 end
